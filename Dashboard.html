@@ -24,8 +24,29 @@
                         
                         <li class="nav-item" >
                            <a href='#' class="nav-link active">DASHBOARD</a>
-                        </li>
                         
+                          <nav class="navbar bg-dark navbar-expand-sm navbar-dark justify-content-end">   
+                           
+                            <ul class="navbar-nav">
+                                                                                          <!--navbar only for DASHBOARD-->
+                                <li class="nav-item">
+                                    <a href='#' class="nav-link active">ACTIVITY</a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href='#' class="nav-link">YOUR LIBRARY</a>
+                                </li>
+
+                            </ul>
+                        
+                           </nav>
+                        
+                        </li>
+
+
+
+                                                                                                      <!--NAV BAR-->
                         <li class="nav-item" >
                             <a href='#' class="nav-link">YOUR LIBRARY</a>
                         </li>
@@ -40,7 +61,7 @@
              <br>
              <br>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         
                         <table class="table table-dark table-striped table-hover">
                             <thead>
@@ -53,12 +74,12 @@
 
                             </tbody>
                             
-                        </table>
+                        </table>                                                                <!--TABLE-->
                                                 
                     </div> 
                         
                              
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                           
                         <table class="table table-dark table-striped table-hover">
                             <thead>
@@ -75,7 +96,23 @@
                     </div>
                     
                     
-                    <div class="col-md-4">
+                    <div class="col-md-6">
+                          
+                        <table class="table table-dark table-striped table-hover">
+                            <thead>
+                                 <tr>
+                                     <th>BOOKS</th>
+                                 </tr>
+                            </thead>
+                            
+                            <tbody id="books">
+
+                            </tbody>
+                            
+                        </table>
+                    </div>  
+                     
+                    <div class="col-md-6">
                           
                         <table class="table table-dark table-striped table-hover">
                             <thead>
@@ -90,7 +127,6 @@
                             
                         </table>
                     </div>  
-
 
 
                 </div>
@@ -123,7 +159,7 @@
                   
                     table  +="<td>";
                          
-                        table  +=data;
+                        table  +=data;                               //Dynamic table which will be updated from DATABASE
 
                         table  +="</td>";
 
@@ -152,6 +188,25 @@
 
                 
 
+          table="";
+             data="jyu";
+             for(var i=0;i<5;i++)
+             {
+                 table += "<tr>";
+                  
+                    table  +="<td>";
+                         
+                        table  +=data;
+
+                        table  +="</td>";
+
+                  table += "</tr>";  
+             }
+          
+          $("#books").html(table); 
+
+          
+          
           table="";
              data="jyu";
              for(var i=0;i<5;i++)
