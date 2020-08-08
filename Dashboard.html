@@ -4,136 +4,99 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard</title>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        </head>
+    </head>
  
              
 
-        <body>
-        
-             <div class="container-fluid">
-                
-                <nav class="navbar bg-dark navbar-expand-sm navbar-dark justify-content-end" >
-                 
-                    <ul class="navbar-nav">
-                        
-                        <li class="nav-item" >
-                           <a href='#' class="nav-link active">DASHBOARD</a>
-                        
-                          <nav class="navbar bg-dark navbar-expand-sm navbar-dark justify-content-end">   
-                           
-                            <ul class="navbar-nav">
-                                                                                          <!--navbar only for DASHBOARD-->
-                                <li class="nav-item">
-                                    <a href='#' class="nav-link active">ACTIVITY</a>
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a href='#' class="nav-link">YOUR LIBRARY</a>
-                                </li>
-
-                            </ul>
-                        
-                           </nav>
-                        
-                        </li>
-
-
-
-                                                                                                      <!--NAV BAR-->
-                        <li class="nav-item" >
-                            <a href='#' class="nav-link">YOUR LIBRARY</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href='#' class="nav-link">LOGOUT</a>
-                        </li>
-
-                    </ul>
-                </nav>
-
-             <br>
-             <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        
-                        <table class="table table-dark table-striped table-hover">
-                            <thead>
-                                 <tr>
-                                     <th>BOOKS ISSUED</th>
-                                 </tr>
-                            </thead>
-                            
-                            <tbody id="issued">
-
-                            </tbody>
-                            
-                        </table>                                                                <!--TABLE-->
-                                                
-                    </div> 
-                        
-                             
-                    <div class="col-md-6">
-                          
-                        <table class="table table-dark table-striped table-hover">
-                            <thead>
-                                 <tr>
-                                     <th>BOOKS GRANTED</th>
-                                 </tr>
-                            </thead>
-                            
-                            <tbody id="granted">
-
-                            </tbody>
-                            
-                        </table>
-                    </div>
-                    
-                    
-                    <div class="col-md-6">
-                          
-                        <table class="table table-dark table-striped table-hover">
-                            <thead>
-                                 <tr>
-                                     <th>BOOKS</th>
-                                 </tr>
-                            </thead>
-                            
-                            <tbody id="books">
-
-                            </tbody>
-                            
-                        </table>
-                    </div>  
-                     
-                    <div class="col-md-6">
-                          
-                        <table class="table table-dark table-striped table-hover">
-                            <thead>
-                                 <tr>
-                                     <th>BOOKS REQUESTED</th>
-                                 </tr>
-                            </thead>
-                            
-                            <tbody id="requested">
-
-                            </tbody>
-                            
-                        </table>
-                    </div>  
-
-
-                </div>
-
-             </div>
+    <body>
+          <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="width:100%;">
             
+        <span class="sar-icon">
+          <i class="fa fa-book" style="font-size:30px;color:#042331"></i> 
+        </span>
+              <a href="#" class="navbar-brand">DASHBOARD</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item">
+                      <a href='#' class="nav-link active">ACTIVITY</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href='#' class="nav-link">YOUR LIBRARY</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href='#' class="nav-link">LOG OUT</a>
+                    </li>
+                </ul>
+              </div>
+			      
+          </nav>
+          <br>
+          <br>
+          <div class="row">
+		        <div class="col-1"></div>
+            <div class="col-md-4 col-10 h">
+              <table class="table table-dark table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>BOOKS ISSUED</th>
+                  </tr>
+                </thead>
+                <tbody id="issued"></tbody>
+              </table>                                                               
+            </div> 
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-md-4 col-10" style="margin-bottom:25px;">
+              <table class="table table-dark table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>BOOKS GRANTED</th>
+                  </tr>
+                </thead>
+                <tbody id="granted"></tbody>
+              </table>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+            <div class="col-md-4 col-10" >
+              <table class="table table-dark table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>BOOKS</th>
+                  </tr>
+                </thead>
+                <tbody id="books"></tbody>
+              </table>
+            </div>  
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+              <div class="col-md-4 col-10">
+                <table class="table table-dark table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th>BOOKS REQUESTED</th>
+                    </tr>
+                  </thead>
+                  <tbody id="requested"></tbody>
+                </table>
+            </div>  
+			      <div class="col-1"></div>
+          </div>
+<footer class="page-footer font-small stylish-color-dark pt-4 bg-dark" style="margin-top:20px;">
 
+
+  
+
+</footer>
 
       <script>
            
@@ -145,7 +108,6 @@
                     alert(result); 
                 }
                   
-
             });             
              })*/
 
@@ -228,9 +190,5 @@
       </script>
 
 
-        </body>
-
-
-
-
-</html>        
+  </body>
+</html>     
