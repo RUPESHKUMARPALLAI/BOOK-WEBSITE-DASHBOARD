@@ -15,7 +15,8 @@
              
 
     <body>
-          <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="width:100%;">
+          
+           <nav class="navbar navbar-expand-sm navbar-dark bg-dark" style="width:100%;">
             
         <span class="sar-icon">
           <i class="fa fa-book" style="font-size:30px;color:#042331"></i> 
@@ -24,6 +25,7 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                   <span class="navbar-toggler-icon"></span>
               </button>
+             
               <div class="collapse navbar-collapse " id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto text-center">
                     <li class="nav-item">
@@ -39,15 +41,18 @@
               </div>
 			      
           </nav>
+          
+          
           <br>
           <br>
           <div class="row">
 		        <div class="col-1"></div>
-            <div class="col-md-4 col-10 h">
+            <div class="col-md-4 col-10 ">
               <table class="table table-dark table-striped table-hover">
                 <thead>
                   <tr>
                     <th>BOOKS ISSUED</th>
+                    <th>TO</th>
                   </tr>
                 </thead>
                 <tbody id="issued"></tbody>
@@ -55,11 +60,12 @@
             </div> 
             <div class="col-1"></div>
             <div class="col-1"></div>
-            <div class="col-md-4 col-10" style="margin-bottom:25px;">
+            <div class="col-md-4 col-10 ">
               <table class="table table-dark table-striped table-hover">
                 <thead>
                   <tr>
                     <th>BOOKS GRANTED</th>
+                    <th>BY</th>
                   </tr>
                 </thead>
                 <tbody id="granted"></tbody>
@@ -67,7 +73,7 @@
             </div>
             <div class="col-1"></div>
             <div class="col-1"></div>
-            <div class="col-md-4 col-10" >
+            <div class="col-md-4 col-10 " >
               <table class="table table-dark table-striped table-hover">
                 <thead>
                   <tr>
@@ -79,11 +85,12 @@
             </div>  
             <div class="col-1"></div>
             <div class="col-1"></div>
-              <div class="col-md-4 col-10">
+              <div class="col-md-4 col-10 ">
                 <table class="table table-dark table-striped table-hover">
                   <thead>
                     <tr>
                       <th>BOOKS REQUESTED</th>
+                      <th>STATUS</th>
                     </tr>
                   </thead>
                   <tbody id="requested"></tbody>
@@ -100,35 +107,53 @@
 
       <script>
            
-          /* $(document).ready(function () {
-            $.ajax({
-                url: "/project.js",
-                type: "post",              
-                success: function (result) {
-                    alert(result); 
-                }
-                  
-            });             
-             })*/
+        /*  $(document).ready(function () {
+             
+
+                   $.get("R.php", function(data, status){
+                     alert("Data: " + data + "\nStatus: " + status);
+                      });
 
 
+             })
+
+*/
            
              var table="";
              var data="jyu";
              for(var i=0;i<5;i++)
              {
                  table += "<tr>";
-                  
+                                                                 //books issued--you have given
                     table  +="<td>";
                          
                         table  +=data;                               //Dynamic table which will be updated from DATABASE
 
                         table  +="</td>";
 
+
+
+                        table  +="<td>";
+                         
+                         table  +=data;                               //Dynamic table which will be updated from DATABASE
+ 
+                         table  +="</td>";
+
+
+                        table  +="<td>";
+                         
+                         table +='<input class="btn btn-primary bibn" type="button" value="GOT IT">';
+  
+                     table  +="</td>";
+
                   table += "</tr>";  
              }
           
           $("#issued").html(table); 
+
+
+
+          
 
    
            table="";
@@ -140,9 +165,17 @@
                     table  +="<td>";
                          
                         table  +=data;
-
+                       
+                       
+                                                                 //books granted--books given to you
                         table  +="</td>";
-
+                     
+                        table  +="<td>";
+                         
+                         table +=data;
+  
+                     table  +="</td>";
+                  
                   table += "</tr>";  
              }
           
@@ -161,6 +194,14 @@
                         table  +=data;
 
                         table  +="</td>";
+            
+                      table  +="<td>";
+                         
+                         table +='<input class="btn btn-primary bbn" type="button" value="REMOVE">';
+  
+                      table  +="</td>";
+
+
 
                   table += "</tr>";  
              }
@@ -181,14 +222,103 @@
 
                         table  +="</td>";
 
+                        table  +="<td>";                                          //you want
+                         
+                         table +='NA';
+  
+                     table  +="</td>";
+                 
+                  
+                     table  +="<td>";
+                         
+                         table +='<input class="btn btn-primary brbn" type="button" value="REMOVE">';
+  
+                    table  +="</td>";
+
+                  
+                  
                   table += "</tr>";  
              }
           
           $("#requested").html(table); 
 
 
+
+
+
+
+
+
+
+
+                
+
+
+
+          $(".bibn").click(function(event){
+                   
+                 $(this).parent().parent().remove();
+
+
+
+
+                  
+               
+
+
+                          $.post("R.php",
+                          {
+                                name: "Donald Duck",
+                                bookname: "THE WHITE TIGER",
+                                bn: "A"
+                           });
+          
+
+                            
+            
+
+
+                });
+
+              
+                $(".bbn").click(function(event){
+                   
+                  $(this).parent().parent().remove();
+
+                  $.post("R.php",
+                          {
+                                name: "Donald Duck",
+                                bookname: "THE WHITE TIGER",
+                                bn: "B"
+                           });
+                  
+                  
+                  
+                  });
+  
+         
+
+                  $(".brbn").click(function(event){
+                   
+                   $(this).parent().parent().remove();
+ 
+                   $.post("R.php",
+                           {
+                                 name: "Donald Duck",
+                                 bookname: "THE WHITE TIGER",
+                                 bn: "C"
+                            });
+                   
+                   
+                   
+                   });
+
+
+
+
+
       </script>
 
 
   </body>
-</html>     
+</html>  
