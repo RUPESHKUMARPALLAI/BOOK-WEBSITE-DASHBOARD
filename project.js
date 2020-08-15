@@ -31,6 +31,6 @@ var con = mysql.createConnection({
  console.log("Number of records deleted: " + result.affectedRows);
   
     });
-
+   
 });
 
