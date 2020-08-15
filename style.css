@@ -35,9 +35,7 @@ body{
   border-top: 1px solid rgba(255,255,255,.1);
   transition: .4s;
 }
-.table td:hover{
-  padding-left: 50px;
-}
+
 .sar-icon{
     background-color:white;
     border-radius:100%;
