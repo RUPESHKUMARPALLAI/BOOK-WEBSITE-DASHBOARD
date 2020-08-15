@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$database="book_portal";
+$username = "root";
+$password = "";
+$database="books_portal";
 
 $con=mysqli_connect($servername,$username,$password,$database);
  
